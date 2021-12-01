@@ -1,9 +1,11 @@
 import { useState } from "react";
 import './Main.css'
 import axios from 'axios'
-import {useHistory} from 'react-router-dom'
-
+//import {useNavigate} from 'react-router-dom'
+//import React from "react";
+//import {useHistory} from 'react-router-dom'
 function Login() {
+    
     
     localStorage.clear();
     return (<div>
@@ -14,7 +16,8 @@ function Login() {
     </div>);
 }
 function MyForm(props) {
-    
+    //const Navigate = useNavigate();
+    //const History=useHistory();
     const [inputs, setInputs] = useState({});
     function handleChange(event) {
         
@@ -26,7 +29,7 @@ function MyForm(props) {
 
 
     function handleSubmit(event) {
-        let history = useHistory();
+        
         event.preventDefault();
 
         console.log(inputs);
@@ -37,7 +40,9 @@ function MyForm(props) {
                 
                 console.log(response.data.accessToken);
                 localStorage.setItem('mytoken',response.data.accessToken)
-                history.push('/ResourceList')
+                //Navigate('/resourcelist',{ replace: true })
+                window.location='/resourcelist';
+                //History.push('/resourcelist')
             })
             .catch(error => {
                 localStorage.clear();

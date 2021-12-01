@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
 import ResourceEnquiry from "./ResourceEnquiry";
-import './Staff.css'
+import '../Staff.css'
 
 
 

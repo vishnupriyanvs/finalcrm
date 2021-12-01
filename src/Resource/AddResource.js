@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Main.css'
+import '../Main.css'
 import axios from 'axios'
 function AddResource() {
     return (<div>

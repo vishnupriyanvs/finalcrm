@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
 import Courses from "./Courses";
-import './Staff.css'
+import '../Staff.css'
 
 
 
