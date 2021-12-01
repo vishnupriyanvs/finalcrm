@@ -1,0 +1,50 @@
+{
+  "course_enquiry": [
+    {
+      "id": 1,
+      "user_name": "Abu",
+      "qualification": "Chalmers Fist",
+      "course_name": "Andriana Leech",
+      "course_fee": 1310,
+      "status": "pending",
+      "duration": "Quintin Nichols",
+      "": "pending"
+    },
+    {
+      "id": 2,
+      "user_name": "Miya",
+      "qualification": "Yvette Paolino",
+      "course_name": "Jeni Vaadeland",
+      "course_fee": 82,
+      "status": "eligible",
+      "duration": "Daisy O'Hannen"
+    },
+    {
+      "id": 3,
+      "user_name": "Roger",
+      "qualification": "Rhody Feldhammer",
+      "course_name": "Corette Hutchin",
+      "course_fee": 712,
+      "status": "pending",
+      "duration": "Cory O'Hearn"
+    },
+    {
+      "id": 4,
+      "user_name": "Blaze",
+      "qualification": "Iggy Milsom",
+      "course_name": "Teresina Demangeot",
+      "course_fee": 1617,
+      "status": "pending",
+      "duration": "Egor Blasik"
+    },
+    {
+      "id": 5,
+      "user_name": "Ling",
+      "qualification": "Delaney Molines",
+      "course_name": "Daniele Fearne",
+      "course_fee": 263,
+      "status": "pending",
+      "duration": "Willabella Burlay"
+    }
+  ]
+}

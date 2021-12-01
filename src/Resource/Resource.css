@@ -1,0 +1,22 @@
+div #unorder{
+    text-align: left;
+    
+
+}
+
+div #buttonsright{
+    text-align: right;
+    display: block;
+    
+}
+ul{
+    list-style: none;
+}
+li{
+    background-color: white;
+    margin: 80px;
+    padding:30px;
+}
+button{
+    width:70px;
+}
