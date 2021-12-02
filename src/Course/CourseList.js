@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
 import Courses from "./Courses";
+import Search from '../Search/SearchBar';
 import '../Staff.css'
 
 
@@ -10,7 +11,7 @@ function CourseList(){
          window.location = '/login'
     }
     //initialize the use case to empty
-    const [staffs,setStaffs] = useState([])
+    const [courses,setCourses] = useState([])
     useEffect(()=>{
         console.log("use effect hook executed");
         axios
@@ -18,7 +19,7 @@ function CourseList(){
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            setStaffs(response.data)
+            setCourses(response.data)
         })
         /*setTimeout(()=>{
             fetchStaffList();
@@ -26,20 +27,41 @@ function CourseList(){
         
     },[])
 
-    return(<>
-    <h1>Library List</h1>
-    <div id="unorder">
-    <ul>
-        {staffs.map(course =>
+    const filterPosts = (courses, query) => {
+        if (!query) {
+            return courses;
+        }
+
+        return courses.filter((course) => {
+            const courseName = course.course_name;
+            return courseName.includes(query);
+        });
+    };
+
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
+    const filteredPosts = filterPosts(courses, searchQuery);
+
+    return (<>
+        <h1>course List</h1>
+        <div id="unorder">
+            <Search
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+            />
             
-            <li key ={course.id}>
-                <Courses details ={course}/>
-            </li>
-            
-        )}
-    </ul>
-    </div>
-    
+            <ul>
+                {filteredPosts.map(course =>
+
+                    <li key={course.id}>
+                        <Courses details={course} />
+                    </li>
+
+                )}
+            </ul>
+        </div>
+
     </>
     );
 }

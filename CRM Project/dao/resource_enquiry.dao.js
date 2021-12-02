@@ -1,6 +1,6 @@
 //const { findAll, create } = require('../models/Gig');
-const Gig=require('../models/resource');
-var resourceDao={
+const Gig=require('../models/resourceenquiry');
+var resourceEnquiryDao={
     findAll:findAll,
     create:create,
     findById: findById,
@@ -27,16 +27,14 @@ function create(resource){
 
 function updateGig(resource,id){
     var updateGig={
-        
         resource_name:resource.resource_name,
-        resource_rent:resource.resource_rent,
-        duration:resource.duration,
-        picture:resource.picture,
-        description:resource.description,
-        
-        
+        enquiry_status:resource.enquiry_status,
+        previous_enquiry_status:resource.previous_enquiry_status,
+        user_name:resource.user_name,
+        date:resource.date,
+        time:resource.time
     };
     return Gig.update(updateGig,{where:{id:id}});
 }
 
-module.exports=resourceDao
+module.exports=resourceEnquiryDao

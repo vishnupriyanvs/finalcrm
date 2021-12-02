@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db=require('../config/database');
 
-const Resource=db.define('resource',{
+const ResourceEnquiry=db.define('resource',{
     id:{
         type:Sequelize.INTEGER,
         primaryKey:true,
@@ -11,22 +11,24 @@ const Resource=db.define('resource',{
         type:Sequelize.STRING,
         allowNull:false
     },
-    resource_rent:{
-        type:Sequelize.INTEGER,
-        allowNull:false
-    },
-    duration:{
-        type:Sequelize.INTEGER,
-        allowNull:false
-    },
-    picture:{
+    user_name:{
         type:Sequelize.STRING,
         allowNull:false
     },
-    description:{
+    enquiry_status:{
         type:Sequelize.STRING,
-        allowNull:false
+        allowNull:false,
+        defaultValue:"pending"
+    },
+    previous_enquiry_status:{
+        type:Sequelize.STRING
+    },
+    date:{
+        type:Sequelize.DATEONLY
+    },
+    time:{
+        type:Sequelize.STRING
     }
 });
 
-module.exports=Resource;
+module.exports=ResourceEnquiry;

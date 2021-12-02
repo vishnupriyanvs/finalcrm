@@ -19,7 +19,7 @@ function MyForm(props) {
 
     useEffect(()=>{
         axios
-        .get(`http://localhost:4500/crm/resource/${props.id}`)
+        .get(`http://localhost:4500/crm/reenquiry/${props.id}`)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
@@ -27,7 +27,7 @@ function MyForm(props) {
         })
         
     },[])
-    const temp = inputs.availability
+    const temp = inputs.enquiry_status
     
     function handleChange (event) {
         const name = event.target.name ;
@@ -45,7 +45,7 @@ function MyForm(props) {
 
         console.log(inputs);
 
-        inputs.availability==="available" ? setInputs(inputs.previous_availability = "not_available"):setInputs(inputs.previous_availability = "available");
+        inputs.enquiry_status==="pending" ? setInputs(inputs.previous_enquiry_status = "resolved"):setInputs(inputs.previous_enquiry_status = "pending");
         
 
         var today = new Date();
@@ -60,7 +60,7 @@ function MyForm(props) {
 
        
         axios
-        .put(`http://localhost:4500/crm/resource/${props.id}`,inputs)
+        .put(`http://localhost:4500/crm/reenquiry/${props.id}`,inputs)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
@@ -72,10 +72,10 @@ function MyForm(props) {
     
     return (<div id ="main">
         <form onSubmit={handleSubmit}>
-            <select style ={{padding:"7px",borderRadius:"7px",border:'1px solid grey',outline:"none"}} name="availability" onChange={handleChange} >
+            <select style ={{padding:"7px",borderRadius:"7px",border:'1px solid grey',outline:"none"}} name="enquiry_status" onChange={handleChange} >
                 <option   >select status</option>
-                <option  value="available" >Available</option>
-                <option  value="not_available" >Not Availabile</option>
+                <option  value="pending" >Pending</option>
+                <option  value="resolved" >Resolved</option>
             </select>
             <button type="submit">Save</button>
         </form>
