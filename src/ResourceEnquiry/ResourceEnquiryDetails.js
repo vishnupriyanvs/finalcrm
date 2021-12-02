@@ -21,7 +21,7 @@ function ResourceEnquiryDetails() {
         console.log("use effect hook executed");
 
         axios
-            .get(`http://localhost:4500/crm/resource/${id}`)
+            .get(`http://localhost:4500/crm/reenquiry/${id}`)
             .then(response => {
                 console.log('promise fulfilled')
                 console.log(response)
@@ -37,10 +37,9 @@ function ResourceEnquiryDetails() {
                 
                 <h3>User Name:{Resource.user_name}</h3>
                 <h3>Resource Name:{Resource.resource_name}</h3>
-                <h3>Resource_fee: {Resource.resource_rent}</h3>
-                <h3>Duration: {Resource.duration}</h3>
                 
-                <h3>Availability: {Resource.availability === "not_available" ?<span style={{color:"red"}}>{Resource.availability}</span>:<span style={{color:"green"}}>{Resource.availability}</span>}</h3>
+                
+                <h3>Enquiry Status: {Resource.enquiry_status === "pending" ?<span style={{color:"red"}}>{Resource.enquiry_status}</span>:<span style={{color:"green"}}>{Resource.enquiry_status}</span>}</h3>
                 <ResourceEnquiryEdit details={Resource}/>
             </div>
         </div>
@@ -54,7 +53,7 @@ function ResourceEnquiryDetails() {
 
 function DeleteResource(id) {
     axios
-        .delete(`http://localhost:4500/crm/resource/${id}`)
+        .delete(`http://localhost:4500/crm/reenquiry/${id}`)
         .then(response => {
             console.log('promise fulfilled')
             console.log(response)
