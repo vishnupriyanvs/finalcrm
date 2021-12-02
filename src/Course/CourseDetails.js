@@ -18,7 +18,7 @@ function CourseDetails(){
         console.log("use effect hook executed");
         
         axios
-        .get(`http://localhost:3002/courses/${id}`)
+        .get(`http://localhost:4500/crm/course/${id}`)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
@@ -33,11 +33,9 @@ function CourseDetails(){
     <div id="secondary">
     <h3>{course.course_name}</h3>
     <img style={{width:"200px",height:"200px"}} src={course.course_image} ></img>
-    <h3>Course_fee: {course.course_fee}</h3>
+    <h3>Course Fee: {course.course_fee}</h3>
     <h3>Duration: {course.duration}</h3>
     <h3>Criteria: {course.criteria}</h3>
-    <h3>Date of publication: {course.date_of_publication}</h3>
-    <h3>Batch Id: {course.batch_id}</h3>
     </div>
     </div>
     <button><a style={{textDecoration:"none",color:"white"}} href="/courselist">Go back </a></button>
@@ -50,7 +48,7 @@ function CourseDetails(){
 
 function Deletecourse(id){
     axios
-        .delete(`http://localhost:3002/courses/${id}`)
+        .delete(`http://localhost:4500/crm/course/${id}`)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

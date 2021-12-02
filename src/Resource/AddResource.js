@@ -26,7 +26,7 @@ function MyForm() {
         console.log(inputs);
 
         axios
-        .post('http://localhost:3001/resource',inputs)
+        .post('http://localhost:4500/crm/resource',inputs)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

@@ -41,7 +41,7 @@ function MyForm(props) {
                 console.log(response.data.accessToken);
                 localStorage.setItem('mytoken',response.data.accessToken)
                 //Navigate('/resourcelist',{ replace: true })
-                window.location='/resourcelist';
+                window.location='/home';
                 //History.push('/resourcelist')
             })
             .catch(error => {

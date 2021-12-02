@@ -16,7 +16,7 @@ function ResourceDelete(){
         console.log("use effect hook executed");
         
         axios
-        .delete(`http://localhost:3500/resource/${id}`)
+        .delete(`http://localhost:4500/crm/resource/${id}`)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

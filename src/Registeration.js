@@ -30,12 +30,12 @@ function MyForm(props) {
         console.log(inputs);
 
         axios
-            .post(`http://localhost:3005/login`, inputs)
+            .post(`http://localhost:3005/register`, inputs)
             .then(response => {
                 
                 console.log(response);
                 localStorage.setItem('mytoken',response.data.accessToken)
-                //window.location('')
+                window.location='/'
             })
             .catch(error => {
                 localStorage.clear();
@@ -66,7 +66,7 @@ function MyForm(props) {
                 <label>Role:</label>
                 <input style={{ marginLeft: 30 }}  type="text" name="role" value={inputs.role || ""} onChange={handleChange} required />
             </div>
-            <button type="submit" >Login</button>
+            <button type="submit" >Register</button>
         </form>
     </div>);
 }

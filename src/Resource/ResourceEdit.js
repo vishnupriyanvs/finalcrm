@@ -18,7 +18,7 @@ function MyForm(props) {
 
     useEffect(()=>{
         axios
-        .get(`http://localhost:3500/resource/${props.id}`)
+        .get(`http://localhost:4500/crm/resource/${props.id}`)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
@@ -40,7 +40,7 @@ function MyForm(props) {
         console.log(inputs);
 
         axios
-        .put(`http://localhost:3500/resource/${props.id}`,inputs)
+        .put(`http://localhost:4500/crm/resource/${props.id}`,inputs)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

@@ -14,7 +14,7 @@ function ResourceList(){
     useEffect(()=>{
         console.log("use effect hook executed");
         axios
-        .get('http://localhost:3500/resource')
+        .get('http://localhost:4500/crm/resource')
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

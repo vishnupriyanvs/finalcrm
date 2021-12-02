@@ -21,7 +21,7 @@ function ResourceEnquiryDetails() {
         console.log("use effect hook executed");
 
         axios
-            .get(`http://localhost:3500/resource/${id}`)
+            .get(`http://localhost:4500/crm/resource/${id}`)
             .then(response => {
                 console.log('promise fulfilled')
                 console.log(response)
@@ -54,7 +54,7 @@ function ResourceEnquiryDetails() {
 
 function DeleteResource(id) {
     axios
-        .delete(`http://localhost:3500/resource/${id}`)
+        .delete(`http://localhost:4500/crm/resource/${id}`)
         .then(response => {
             console.log('promise fulfilled')
             console.log(response)
