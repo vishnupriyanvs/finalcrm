@@ -14,7 +14,7 @@ function CourseEnquiryList(){
     useEffect(()=>{
         console.log("use effect hook executed");
         axios
-        .get('http://localhost:3600/course_enquiry')
+        .get('http://localhost:4500/crm/ceenquiry')
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)

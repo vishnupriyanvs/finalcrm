@@ -36,9 +36,7 @@ function ResourceEnquiryDetails() {
             <div id="secondary">
                 
                 <h3>User Name:{Resource.user_name}</h3>
-                <h3>Resource Name:{Resource.resource_name}</h3>
-                
-                
+                <h3>Resource Name:{Resource.resource_name}</h3>                
                 <h3>Enquiry Status: {Resource.enquiry_status === "pending" ?<span style={{color:"red"}}>{Resource.enquiry_status}</span>:<span style={{color:"green"}}>{Resource.enquiry_status}</span>}</h3>
                 <ResourceEnquiryEdit details={Resource}/>
             </div>

@@ -43,10 +43,7 @@ function MyForm(props) {
         
         event.preventDefault();
 
-        console.log(inputs);
-
-        inputs.enquiry_status==="pending" ? setInputs(inputs.previous_enquiry_status = "resolved"):setInputs(inputs.previous_enquiry_status = "pending");
-        
+        console.log(inputs);      
 
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');

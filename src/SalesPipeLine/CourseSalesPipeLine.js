@@ -1,27 +1,27 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
-import Resource from "./Resource";
+import Course from "./Course";
 import './Resource.css'
 
 
 
-function ResourceSalesPipeLine(){
+function CourseSalesPipeLine(){
     if(!localStorage.getItem('mytoken')){
         window.location = '/login'
     }
     //initialize the use case to empty
-    const [resources,setResources] = useState([])
+    const [course,setcourse] = useState([])
     useEffect(()=>{
         console.log("use effect hook executed");
         axios
-        .get('http://localhost:4500/crm/reenquiry')
+        .get('http://localhost:4500/crm/ceenquiry')
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            setResources(response.data)
+            setcourse(response.data)
         })
         /*setTimeout(()=>{
-            fetchresourceList();
+            fetchcourseList();
         },5000)*/
         
     },[])
@@ -32,16 +32,16 @@ function ResourceSalesPipeLine(){
         <center>
         <table cellSpacing = "0" cellPadding ="0">
             <tr>
-                <th>Resource Name</th>
+                <th>Course Name</th>
                 <th>Current Status</th>
                 <th>Previous Status</th>
                 <th>Date</th>
                 <th>Time</th>
             </tr>
-            {resources.map(resource =>
+            {course.map(course =>
             
-            <tr key ={resource.id}>
-                <Resource details ={resource}/>
+            <tr key ={course.id}>
+                <Course details ={course}/>
             </tr>
             
              )}
@@ -53,4 +53,4 @@ function ResourceSalesPipeLine(){
     </>
     );
 }
-export default ResourceSalesPipeLine;
+export default CourseSalesPipeLine;

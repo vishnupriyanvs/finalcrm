@@ -40,11 +40,19 @@ function MyForm(props) {
     const navigate = useNavigate();
     function handleSubmit(event){
         event.preventDefault();
-
         console.log(inputs);
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+        var yyyy = today.getFullYear();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var date = dd + '/' + mm + '/' + yyyy;
+        inputs.date = date;
+        
+        inputs.time=time;
 
         axios
-        .put(`http://localhost:3600/course_enquiry/${props.id}`,inputs)
+        .put(`http://localhost:4500/crm/ceenquiry/${props.id}`,inputs)
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
@@ -55,8 +63,8 @@ function MyForm(props) {
     }
     return (<div id ="main">
         <form onSubmit={handleSubmit}>
-            <select style ={{padding:"7px",borderRadius:"7px",border:'1px solid grey',outline:"none"}} name="status" onChange={handleChange}>
-                <option   >select status</option>
+            <select style ={{padding:"7px",borderRadius:"7px",border:'1px solid grey',outline:"none"}} name="enquiry_status" onChange={handleChange}>
+                <option  >select status</option>
                 <option  value="pending" >pending</option>
                 <option  value="eligible" >eligible</option>
                 <option  value="not eligible" >not eligible</option>

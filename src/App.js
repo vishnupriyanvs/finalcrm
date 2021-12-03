@@ -23,6 +23,7 @@ import ResourceEnquiryDetails from "./ResourceEnquiry/ResourceEnquiryDetails";
 import ResourceEnquiryList from "./ResourceEnquiry/ResourceEnquiryList";
 import ResourceEnquiryEdit from "./ResourceEnquiry/ResourceEnquiryEdit";
 import ResourceSalesPipeLine from "./SalesPipeLine/ResourceSalesPipeLine";
+import CourseSalesPipeLine from "./SalesPipeLine/CourseSalesPipeLine";
 
 
 function App(){
@@ -54,8 +55,8 @@ function MyRouter(){
       {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/celist">Course Enquiry List</Link></div>}
       {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/relist">Resource Enquiry List</Link></div>}
       {!localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/registeration">Registration</Link></div>}
-      {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/salesresource">Sales PipeLine</Link></div>}
-
+      {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/salesresource">Resource Sales PipeLine</Link></div>}
+      {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/salescourse">Course Sales PipeLine</Link></div>}
       </div>
       <Routes>
        
@@ -83,6 +84,7 @@ function MyRouter(){
         <Route path="/relist" element={<ResourceEnquiryList/>}/>
         <Route path="/resourceedit/:id" element={<ResourceEnquiryEdit/>}/>
         <Route path="/salesresource" element={<ResourceSalesPipeLine/>}/>
+        <Route path="/salescourse" element={<CourseSalesPipeLine/>}/>
 
 
       </Routes>

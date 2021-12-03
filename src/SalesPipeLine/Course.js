@@ -1,6 +1,6 @@
-function Resource(props){
+function Course(props){
     return(<>
-                <td>{props.details.resource_name}</td>
+                <td>{props.details.course_name}</td>
                 <td>{props.details.enquiry_status}</td>
                 <td>{props.details.previous_enquiry_status}</td>
                 <td>{props.details.date}</td>
@@ -9,4 +9,4 @@ function Resource(props){
        
     </>)
 }
-export default Resource;
+export default Course;
