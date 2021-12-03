@@ -1,4 +1,6 @@
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import "react-toastify/dist/ReactToastify.css";
+import 'reactjs-popup/dist/index.css';
 
 
 
@@ -7,6 +9,7 @@ import CourseList from "./Course/CourseList";
 import CourseEdit from "./Course/CourseEdit";
 import CourseDetails from "./Course/CourseDetails";
 import AddResource from "./Resource/AddResource"
+import AddCourse from "./Course/AddCourse"
 import NoMatch from "./NoMatch"
 import ResourceList from "./Resource/ResourceList"
 import './Main.css'
@@ -24,6 +27,7 @@ import ResourceEnquiryList from "./ResourceEnquiry/ResourceEnquiryList";
 import ResourceEnquiryEdit from "./ResourceEnquiry/ResourceEnquiryEdit";
 import ResourceSalesPipeLine from "./SalesPipeLine/ResourceSalesPipeLine";
 import CourseSalesPipeLine from "./SalesPipeLine/CourseSalesPipeLine";
+
 
 
 function App(){
@@ -49,6 +53,7 @@ function MyRouter(){
       <div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/">Home</Link></div>
       {!localStorage.getItem('mytoken') && <div id="link" style={div}><Link  style={{ textDecoration: "none", color: 'black' }} to="/login">Login</Link></div>}
       {localStorage.getItem('mytoken') && <div id="link" style={div}><Link  style={{ textDecoration: "none", color: 'black' }}onClick={()=>window.location = '/login'} to="/login">Logout</Link></div>}
+      {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/addcourse">Add Course</Link></div>}
       {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/courselist">Course List</Link></div>}
       {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/addresource">Add Resource</Link></div>}
       {localStorage.getItem('mytoken') &&<div id ="link" style={div}><Link style={{textDecoration:"none",color:'black'}} to="/resourcelist">Resource List</Link></div>}
@@ -63,6 +68,7 @@ function MyRouter(){
         
         
         <Route path="/addresource" element={<AddResource/>}/>
+        <Route path="/addcourse" element={<AddCourse/>}/>
         <Route path="*" element={<NoMatch/>}/>
         <Route path="resourcedetails/:id" element={<ResourceDetails/>}/>
         <Route path="resourcedelete/:id" element={<ResourceDelete/>}/>

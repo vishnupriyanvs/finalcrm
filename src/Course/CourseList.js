@@ -44,7 +44,7 @@ function CourseList(){
     const filteredPosts = filterPosts(courses, searchQuery);
 
     return (<>
-        <h1>course List</h1>
+        <h1>Course List</h1>
         <div id="unorder">
             <Search
                 searchQuery={searchQuery}

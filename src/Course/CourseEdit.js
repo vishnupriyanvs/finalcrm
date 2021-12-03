@@ -2,6 +2,8 @@ import { useState ,useEffect} from "react";
 import '../Main.css'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+
 function CourseEdit() {
     if(!localStorage.getItem('mytoken')){
         window.location = '/login'
@@ -15,6 +17,17 @@ function CourseEdit() {
 }
 function MyForm(props) {
     const[inputs,setInputs] = useState({})
+
+    const notify = () =>
+    toast.success("Course Updated!!", {
+      position: "bottom-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
 
     useEffect(()=>{
         axios
@@ -44,7 +57,7 @@ function MyForm(props) {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            alert("The user details were updated");
+            setTimeout(()=>{window.location=`/CourseDetails/${props.id}`},3000)
         })
     }
     return (<div id ="main">
@@ -69,10 +82,9 @@ function MyForm(props) {
             <div>
                 <label>Criteria:</label>
                 <input style={{marginLeft:49}} type="text" name="criteria"  value={inputs.criteria || ""} onChange={handleChange} required />
-            </div>
-            
-                 
-            <button type="submit" >Update</button>
+            </div>                 
+            <button type="submit" onClick={notify}>Update</button>
+            <ToastContainer/>
         </form>
     </div>);
 }
