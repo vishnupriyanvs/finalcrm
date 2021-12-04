@@ -1,8 +1,10 @@
+import Card from "./Card/Card";
 function Home(){
   return(<>
-    <div id="main">
+    
+    <div id="homemain">
       <h1>Welcome Home!</h1>
-      <p>Lorem Ipsum is simply dummy text of 
+      {/* <p>Lorem Ipsum is simply dummy text of 
         the printing and typesetting industry. 
         Lorem Ipsum has been the industry's 
         standard dummy text ever since the 1500s, 
@@ -16,7 +18,8 @@ function Home(){
         sheets containing Lorem Ipsum passages, 
         and more recently with desktop publishing 
         software like Aldus PageMaker including 
-        versions of Lorem Ipsum.</p>
+        versions of Lorem Ipsum.</p> */}
+        <Card/>
     </div>
   </>
 

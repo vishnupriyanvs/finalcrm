@@ -5,7 +5,7 @@ import axios from 'axios'
 function Registeration() {
     
     return (<div>
-        <h1>Please Register</h1>
+        
         <MyForm />
 
 
@@ -47,16 +47,16 @@ function MyForm(props) {
 
 
     }
-    return (<div id="main">
-
+    return (<div style ={{marginTop:"90px"}} id="main">
+        <h1>Please Register</h1>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Email:</label>
-                <input style={{ marginLeft: 22 }} type="email" name="email" value={inputs.email || ""} onChange={handleChange} required />
+                <input style={{ marginLeft: 30 }} type="email" name="email" value={inputs.email || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Name:</label>
-                <input  style={{ marginLeft: 22 }} type="text" name="name" value={inputs.name || ""} onChange={handleChange} required />
+                <input  style={{ marginLeft: 28 }} type="text" name="name" value={inputs.name || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Password:</label>
@@ -64,7 +64,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Role:</label>
-                <input style={{ marginLeft: 30 }}  type="text" name="role" value={inputs.role || ""} onChange={handleChange} required />
+                <input style={{ marginLeft: 38 }}  type="text" name="role" value={inputs.role || ""} onChange={handleChange} required />
             </div>
             <button type="submit" >Register</button>
         </form>

@@ -1,7 +1,5 @@
 div #unorder{
-    text-align: left;
-    
-
+    text-align: center;
 }
 
 div #buttonsright{
@@ -11,11 +9,16 @@ div #buttonsright{
 }
 ul{
     list-style: none;
+    
+    margin-right:300px;
+    margin-left:300px;
+   
 }
 li{
     background-color: white;
     margin: 80px;
     padding:30px;
+   
 }
 button{
     width:70px;

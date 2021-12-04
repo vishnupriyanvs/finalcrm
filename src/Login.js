@@ -9,7 +9,7 @@ function Login() {
     
     localStorage.clear();
     return (<div>
-        <h1>Please Login</h1>
+        
         <MyForm />
 
 
@@ -54,8 +54,8 @@ function MyForm(props) {
 
 
     }
-    return (<div id="main">
-
+    return (<div style ={{marginTop:"90px"}} id="main">
+        <h1 style={{marginTop:'20px'}}>Please Login</h1>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Email:</label>
@@ -63,7 +63,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Password:</label>
-                <input style={{ marginLeft: 60 }} type="password" name="password" value={inputs.password || ""} onChange={handleChange} required />
+                <input style={{ marginLeft: 52 }} type="password" name="password" value={inputs.password || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Role:</label>

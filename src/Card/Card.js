@@ -1,15 +1,13 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
-import Courses from "./Courses";
+import CardLayout from "./CardLayout";
 import Search from '../Search/SearchBar';
 import '../Staff.css'
 
 
 
-function CourseList(){
-    if(!localStorage.getItem('mytoken')){
-         window.location = '/login'
-    }
+function Card(){
+    
     //initialize the use case to empty
     const [courses,setCourses] = useState([])
     useEffect(()=>{
@@ -44,8 +42,8 @@ function CourseList(){
     const filteredPosts = filterPosts(courses, searchQuery);
 
     return (<>
-        <h1 style={{marginTop:'90px'}}>Course List</h1>
-        <div id="unorder">
+        
+        <div >
             <Search
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
@@ -55,7 +53,7 @@ function CourseList(){
                 {filteredPosts.map(course =>
 
                     <li key={course.id}>
-                        <Courses details={course} />
+                        <CardLayout details={course} />
                     </li>
 
                 )}
@@ -65,4 +63,4 @@ function CourseList(){
     </>
     );
 }
-export default CourseList;
+export default Card;

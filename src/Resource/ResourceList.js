@@ -43,7 +43,7 @@ function ResourceList() {
     const filteredPosts = filterPosts(resources, searchQuery);
 
     return (<>
-        <h1>Resource List</h1>
+        <h1 style ={{marginTop:"90px"}}>Resource List</h1>
         <div id="unorder">
             <Search
                 searchQuery={searchQuery}
