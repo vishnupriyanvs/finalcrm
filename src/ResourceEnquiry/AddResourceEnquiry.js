@@ -42,7 +42,7 @@ function MyForm() {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            setTimeout(()=>{window.location='/ResourceList'},3000)
+            setTimeout(()=>{window.location='/resourcelist'},3000)
         })
     }
     return (<div id ="main">

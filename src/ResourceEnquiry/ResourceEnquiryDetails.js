@@ -32,7 +32,7 @@ function ResourceEnquiryDetails() {
 
     return (<>
         <div >
-            <h1 style={{marginTop:"90px"}}>Resource Enquiry Details</h1>
+            <h1>Resource Enquiry Details</h1>
             <div id="secondary">
                 
                 <h3>User Name:{Resource.user_name}</h3>
@@ -43,9 +43,7 @@ function ResourceEnquiryDetails() {
         </div>
         <button><a style={{ textDecoration: "none", color: "white" }} href="/relist">Go back </a></button>
 
-        <button type="button" onClick={() => navigate(`/resourceedit/${Resource.id}`)}>Edit</button>
-        <button type="button" onClick={() => DeleteResource(Resource.id)}>Delete</button>
-    </>
+       </>
     );
 }
 

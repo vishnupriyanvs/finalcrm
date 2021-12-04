@@ -6,7 +6,6 @@ function Resource(props){
         
         <div id="buttonsright">
                 <button style={{width:'100px'}}><Link style={{color:'white',textDecoration:'none'}} to={`/resourcedetails/${props.details.id}`}>View Details</Link></button>
-                <button><Link to={`/resourcedelete/${props.details.id}`} style={{color:'white',textDecoration:'none'}}>Delete</Link></button>
         </div>
     </>)
 }

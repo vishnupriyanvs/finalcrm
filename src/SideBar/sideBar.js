@@ -15,6 +15,9 @@ export default props => {
       <a className="menu-item" href="/addcourse">
         Add Course
       </a>
+      <a className="menu-item" href="/addce">
+        Add Course Enquiry
+      </a>
       <a className="menu-item" href="/celist">
         Course Enquiry List
       </a>
@@ -29,7 +32,9 @@ export default props => {
         Add Resource
       </a>
 
-      
+      <a className="menu-item" href="/addre">
+        Add Resource Enquiry
+      </a>
 
       <a className="menu-item" href="/relist">
         Resource Enquiry List

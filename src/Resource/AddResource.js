@@ -1,6 +1,8 @@
 import { useState } from "react";
 import '../Main.css'
 import axios from 'axios'
+import { ToastContainer, toast } from "react-toastify";
+
 function AddResource() {
     return (<div>
 
@@ -11,6 +13,16 @@ function AddResource() {
 function MyForm() {
     const[inputs,setInputs] = useState({})
 
+    const notify = () =>
+    toast.success("Resource Added!!", {
+      position: "bottom-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    });
 
     function handleChange(event){
         const name = event.target.name ;
@@ -30,10 +42,10 @@ function MyForm() {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            window.location='/ResourceList';
+            setTimeout(()=>{window.location='/ResourceList'},3000)
         })
     }
-    return (<div style ={{marginTop:"90px"}}id ="main">
+    return (<div id ="main">
         <h1>Add Resource</h1>
         <form onSubmit={handleSubmit}>
             <div>
@@ -41,33 +53,26 @@ function MyForm() {
                 <input type="text" name="resource_name" value={inputs.resource_name || ""} onChange={handleChange} required />
             </div>
             <div>
-                <label>Batch id :</label>
-                <input  style={{marginLeft:58}} type="text" name="batch_id"  value={inputs.batch_id || ""} onChange={handleChange} required />
-            </div>
-            <div>
                 <label>Resource Rent :</label>
-                <input  style={{marginLeft:9}} type="number" name="resource_rent"  value={inputs.resource_rent || ""} onChange={handleChange} required />
+                <input  style={{marginLeft:6}} type="number" name="resource_rent"  value={inputs.resource_rent || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Duration :</label>
-                <input  style={{marginLeft:55}} type="text" name="duration"  value={inputs.duration || ""} onChange={handleChange} required />
-            </div>
-            <div>
-                <label>Availability :</label>
-                <input  style={{marginLeft:41}} type="text" name="availability"  value={inputs.availability || ""} onChange={handleChange} required />
+                <input  style={{marginLeft:41}} type="text" name="duration"  value={inputs.duration || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Picture :</label>
-                <input style={{marginLeft:65}} type="text" name="picture"  value={inputs.picture  || ""} onChange={handleChange}  required />
+                <input style={{marginLeft:51}} type="text" name="picture"  value={inputs.picture  || ""} onChange={handleChange}  required />
             </div>
             <div>
                 <label>Description :</label>
-                <textarea style={{marginLeft:35}} name="description"  value={inputs.description  || ""} onChange={handleChange}  required />
+                <textarea style={{marginLeft:23}} name="description"  value={inputs.description  || ""} onChange={handleChange}  required />
             </div>
             
             
             
-            <button type="submit" >Add</button>
+            <button type="submit" onClick={notify}>Add</button>
+            <ToastContainer></ToastContainer>
         </form>
     </div>);
 }

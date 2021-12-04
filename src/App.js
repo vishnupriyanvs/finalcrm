@@ -1,21 +1,25 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import "react-toastify/dist/ReactToastify.css";
+import 'reactjs-popup/dist/index.css';
 
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+
+//import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './Login'
 import CourseList from "./Course/CourseList";
 import CourseEdit from "./Course/CourseEdit";
 import CourseDetails from "./Course/CourseDetails";
 import AddResource from "./Resource/AddResource"
+import AddCourse from "./Course/AddCourse"
 import NoMatch from "./NoMatch"
 import ResourceList from "./Resource/ResourceList"
 import './Main.css'
 import ResourceDetails from "./Resource/ResourceDetails"
-import ResourceDelete from "./Resource/ResourceDelete"
 import ResourceEdit from "./Resource/ResourceEdit"
 import Registeration from "./Registeration";
 import Home from './Home'
 import UserCourseEnquiry from "./UserCourseEnquiry";
+import AddCourseEnquiry from "./CourseEnquiry/AddCourseEnquiry";
 import CourseEnquiryDetails from "./CourseEnquiry/CourseEnquiryDetails";
 import CourseEnquiryList from "./CourseEnquiry/CourseEnquiryList";
 import CourseEnquiryEdit from "./CourseEnquiry/CourseEnquiryEdit";
@@ -24,6 +28,7 @@ import ResourceEnquiryList from "./ResourceEnquiry/ResourceEnquiryList";
 import ResourceEnquiryEdit from "./ResourceEnquiry/ResourceEnquiryEdit";
 import ResourceSalesPipeLine from "./SalesPipeLine/ResourceSalesPipeLine";
 import CourseSalesPipeLine from "./SalesPipeLine/CourseSalesPipeLine";
+import AddResourceEnquiry from "./CourseEnquiry/AddCourseEnquiry";
 import './SideBar/side.css';
 import SideBar from './SideBar/sideBar'
 
@@ -73,22 +78,24 @@ function MyRouter() {
         <Route path="/addresource" element={<AddResource />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="resourcedetails/:id" element={<ResourceDetails />} />
-        <Route path="resourcedelete/:id" element={<ResourceDelete />} />
         <Route path="/resourceedit/:id" element={<ResourceEdit />} />
         <Route path="/resourcelist" element={<ResourceList />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registeration" element={<Registeration />} />
 
         <Route path="/courselist" element={<CourseList />} />
+        <Route path="/addcourse" element={<AddCourse />} />
         <Route path="/coursedetails/:id" element={<CourseDetails />} />
         <Route path="/courseedit/:id" element={<CourseEdit />} />
         <Route path="/" element={<Home />} />
         <Route path="/userce/:id" element={<UserCourseEnquiry />} />
         <Route path="/cedetails/:id" element={<CourseEnquiryDetails />} />
         <Route path="/celist" element={<CourseEnquiryList />} />
+        <Route path="/addce" element={<AddCourseEnquiry />} />
         <Route path="/editstatus/:id" element={<CourseEnquiryEdit />} />
 
         <Route path="/redetails/:id" element={<ResourceEnquiryDetails />} />
+        <Route path="/addre" element={<AddResourceEnquiry />} />
         <Route path="/relist" element={<ResourceEnquiryList />} />
         <Route path="/resourceedit/:id" element={<ResourceEnquiryEdit />} />
         <Route path="/salesresource" element={<ResourceSalesPipeLine />} />
