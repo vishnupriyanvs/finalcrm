@@ -27,7 +27,7 @@ function CourseEnquiryList(){
     },[])
 
     return(<>
-    <h1>Course Enquiry List</h1>
+    <h1 style ={{marginTop:"90px"}} >Course Enquiry List</h1>
     <div id="unorder">
     <ul>
         {courses.map(course =>

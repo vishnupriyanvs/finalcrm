@@ -32,7 +32,7 @@ function CourseEnquiryDetails() {
 
     return (<>
         <div >
-            <h1>Course Enquiry Details</h1>
+            <h1 style={{marginTop:"90px"}}>Course Enquiry Details</h1>
             <div id="secondary">
                 
                 <h3>User Name:{course.user_name}</h3>

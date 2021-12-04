@@ -1,6 +1,6 @@
 import './search.css'
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
-    <form  method="get">
+    <form  method="get" style={{textAlign:'center'}}>
         <label >
             <span className="visually-hidden">Search blog posts</span>
         </label>
@@ -8,8 +8,9 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
             value={searchQuery}
             onInput={e => setSearchQuery(e.target.value)}
             type="text"
-            placeholder="Search blog posts"
+            placeholder="Search ..."
             name="s"
+            style={{width:'200px'}}
         />
         <button type="submit">Search</button>
     </form>

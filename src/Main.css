@@ -13,27 +13,39 @@ input ,textarea{
     opacity: 0.95;
     height: 40%;
     padding:30px;
-    margin:20px 170px;
+    margin:20px 350px;
     text-align: center;
-    
+  }
+  div #homemain{
+    background:white;
+    opacity: 0.95;
+    height: 40%;
+    padding:30px;
+    margin:120px 170px;
+    text-align: center;
+    z-index: -1;
   
   }
   div #secondary{
     background-color: white;
-    margin: 20px 180px;
+    margin: 20px 350px;
     padding:50px;
-    font: size 12px;;
+    text-align: center;
   }
   div #ui{
+    
+    padding-top: 10px;
+    padding-bottom: 160vh;
+    
+  }
+  body{
     background: #00C9FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
   
   div{
-    margin:5px;
+    margin:0 0 0 -2px;
     text-align: center;
   }
   
@@ -55,11 +67,12 @@ input ,textarea{
     padding:8px
   }
   
-  div #nav{
+  #nav{
     background-color: white;
     padding: 15px;
     margin:0px;
   }
-  div #link{
+  span #link{
     text-decoration: none;
+    text-align: left;
   }

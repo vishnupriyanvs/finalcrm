@@ -27,7 +27,7 @@ function CourseSalesPipeLine(){
     },[])
 
     return(<>
-    <h1>Sales Pipe Line</h1>
+    <h1 style ={{marginTop:"90px"}} >Sales Pipe Line</h1>
     <div id="unorder">
         <center>
         <table cellSpacing = "0" cellPadding ="0">
