@@ -43,9 +43,7 @@ function ResourceEnquiryDetails() {
         </div>
         <button><a style={{ textDecoration: "none", color: "white" }} href="/relist">Go back </a></button>
 
-        <button type="button" onClick={() => navigate(`/resourceedit/${Resource.id}`)}>Edit</button>
-        <button type="button" onClick={() => DeleteResource(Resource.id)}>Delete</button>
-    </>
+       </>
     );
 }
 
