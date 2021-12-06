@@ -61,14 +61,14 @@ function MyForm(props) {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            alert("Status has been updated");
+           
         })
         window.location=`/redetails/${props.id}`
         
     }
     
-    return (<div style={{marginTop:'90px'}} id ="main">
-        <form onSubmit={handleSubmit}>
+    return (<div style={{marginTop:'90px'}} >
+        <form onSubmit={handleSubmit} style={{textAlign:"center"}}>
             <select style ={{padding:"7px",borderRadius:"7px",border:'1px solid grey',outline:"none"}} name="enquiry_status" onChange={handleChange} >
                 <option   >select status</option>
                 <option  value="pending" >Pending</option>

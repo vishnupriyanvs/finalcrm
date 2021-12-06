@@ -69,7 +69,7 @@ function MyForm() {
             </div>
             <div>
                 <label>Description :</label>
-                <textarea style={{marginLeft:33}} name="description"  value={inputs.description  || ""} onChange={handleChange}  required />
+                <textarea style={{marginLeft:33,resize:'none'}} name="description"  value={inputs.description  || ""} onChange={handleChange}  required />
             </div>
             
             

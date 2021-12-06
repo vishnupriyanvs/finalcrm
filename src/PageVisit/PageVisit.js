@@ -50,7 +50,7 @@ function Barchartss(props) {
             cx={200}
             cy={200}
             outerRadius={80}
-            fill="black"
+            fill='rgb(39, 82, 163)'
             label
           />
           <Tooltip />

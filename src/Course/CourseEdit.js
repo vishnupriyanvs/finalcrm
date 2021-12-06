@@ -61,15 +61,15 @@ function MyForm(props) {
         })
     }
     return (<div style={{marginTop:'90px'}} id ="main">
-        <h1>Edit Book</h1>
+        <h1>Edit Course</h1>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Course Name:</label>
-                <input style={{marginLeft:83}}type="text" name="course_name" value={inputs.course_name || ""} onChange={handleChange} required />
+                <input style={{marginLeft:1}}type="text" name="course_name" value={inputs.course_name || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Course Fee:</label>
-                <input style= {{marginLeft:60}} type="text" name="course_fee"  value={inputs.course_fee || ""} onChange={handleChange} required />
+                <input style= {{marginLeft:17}} type="text" name="course_fee"  value={inputs.course_fee || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Course Image:</label>
@@ -77,7 +77,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Duration :</label>
-                <input type="text" name="duration"  value={inputs.duration || ""} onChange={handleChange} required />
+                <input style= {{marginLeft:35}}type="text" name="duration"  value={inputs.duration || ""} onChange={handleChange} required />
             </div>
             <div>
                 <label>Criteria:</label>

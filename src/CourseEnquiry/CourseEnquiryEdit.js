@@ -56,7 +56,7 @@ function MyForm(props) {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            alert("Status has been updated");
+            
         })
         window.location=`/cedetails/${props.id}`
         
