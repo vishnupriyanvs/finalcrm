@@ -44,11 +44,12 @@ function Card(){
     return (<>
         
         <div>
+
             <Search
                 searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery}
             />
-            
+            <h2 style={{marginTop:"50px"}}>Courses</h2>
             <span style={{display:"inline"}}>
                 {filteredPosts.map(course =>
 

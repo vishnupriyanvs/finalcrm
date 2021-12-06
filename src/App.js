@@ -4,7 +4,7 @@ import 'reactjs-popup/dist/index.css';
 
 
 
-//import 'bootstrap/dist/css/bootstrap.min.css'
+import Barchartss from './PageVisit/PageVisit';
 import Login from './Login'
 import CourseList from "./Course/CourseList";
 import CourseEdit from "./Course/CourseEdit";
@@ -18,7 +18,7 @@ import ResourceDetails from "./Resource/ResourceDetails"
 import ResourceEdit from "./Resource/ResourceEdit"
 import Registeration from "./Registeration";
 import Home from './Home'
-import UserCourseEnquiry from "./UserCourseEnquiry";
+
 import AddCourseEnquiry from "./CourseEnquiry/AddCourseEnquiry";
 import CourseEnquiryDetails from "./CourseEnquiry/CourseEnquiryDetails";
 import CourseEnquiryList from "./CourseEnquiry/CourseEnquiryList";
@@ -29,6 +29,8 @@ import ResourceEnquiryEdit from "./ResourceEnquiry/ResourceEnquiryEdit";
 import ResourceSalesPipeLine from "./SalesPipeLine/ResourceSalesPipeLine";
 import CourseSalesPipeLine from "./SalesPipeLine/CourseSalesPipeLine";
 import AddResourceEnquiry from "./ResourceEnquiry/AddResourceEnquiry";
+import UserResourceDetails from "./Resource/UserResourceDetails";
+import UserCourseDetails from "./Course/UserCourseDetails ";
 import './SideBar/side.css';
 import SideBar from './SideBar/sideBar'
 
@@ -45,7 +47,7 @@ function App() {
         
       
     </div>
-    <footer style={{bottom:'0',textAlign:'center'}}><p>Copyright 2021 - Team 3</p></footer>
+    
   </div>
 
   )
@@ -70,6 +72,7 @@ function MyRouter() {
         {localStorage.getItem('mytoken') && <div id="link" style={div}><Link style={{ textDecoration: "none", color: 'black' }} onClick={() => window.location = '/login'} to="/login">Logout</Link></div>}
         {!localStorage.getItem('mytoken') && <div id="link" style={div}><Link style={{ textDecoration: "none", color: 'black' }} to="/registeration">Registration</Link></div>}
         <div id="link" style={div}><Link style={{ textDecoration: "none", color: 'black' }} to="/">Home</Link></div>
+        {localStorage.getItem('mytoken') && localStorage.getItem('role') === "admin" && <div id="link" style={div}><Link  style={{ textDecoration: "none", color: 'black' }} to="/pagevisit">Page Visit</Link></div>}
 
       </div>
       <Routes>
@@ -79,6 +82,8 @@ function MyRouter() {
         <Route path="/addresource" element={<AddResource />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="resourcedetails/:id" element={<ResourceDetails />} />
+        <Route path="reuserdetails/:id" element={<UserResourceDetails />} />
+        <Route path="couserdetails/:id" element={<UserCourseDetails />} />
         <Route path="/resourceedit/:id" element={<ResourceEdit />} />
         <Route path="/resourcelist" element={<ResourceList />} />
         <Route path="/login" element={<Login />} />
@@ -89,7 +94,6 @@ function MyRouter() {
         <Route path="/coursedetails/:id" element={<CourseDetails />} />
         <Route path="/courseedit/:id" element={<CourseEdit />} />
         <Route path="/" element={<Home />} />
-        <Route path="/userce/:id" element={<UserCourseEnquiry />} />
         <Route path="/cedetails/:id" element={<CourseEnquiryDetails />} />
         <Route path="/celist" element={<CourseEnquiryList />} />
         <Route path="/addce" element={<AddCourseEnquiry />} />
@@ -101,6 +105,7 @@ function MyRouter() {
         <Route path="/resourceedit/:id" element={<ResourceEnquiryEdit />} />
         <Route path="/salesresource" element={<ResourceSalesPipeLine />} />
         <Route path="/salescourse" element={<CourseSalesPipeLine />} />
+        <Route path="/pagevisit" element={<Barchartss/>} />
 
 
       </Routes>

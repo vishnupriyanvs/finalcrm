@@ -6,8 +6,8 @@ import '../Staff.css'
 
 
 function ResourceEnquiryList(){
-    if(!localStorage.getItem('mytoken')){
-         window.location = '/login'
+    if( localStorage.getItem('role')!=="admin"){
+        window.location='/';
     }
     //initialize the use case to empty
     const [resource,setresource] = useState([])

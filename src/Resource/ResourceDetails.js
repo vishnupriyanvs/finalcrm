@@ -8,7 +8,7 @@ import Popup from "reactjs-popup";
 
 
 function ResourceDetails(){
-    if(!localStorage.getItem('mytoken')){
+    if(!localStorage.getItem('mytoken') && localStorage.getItem('role') === "admin"){
         window.location = '/login'
     } 
     const [resource,setResource] = useState([])

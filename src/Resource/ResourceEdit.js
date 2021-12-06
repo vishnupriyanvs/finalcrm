@@ -77,7 +77,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Picture :</label>
-                <input style={{marginLeft:51}} type="text" name="picture "  value={inputs.picture  || ""} onChange={handleChange}  required />
+                <input style={{marginLeft:51}} type="text" name="picture"  value={inputs.picture  || ""} onChange={handleChange}  required />
             </div>
             <div>
                 <label>Description :</label>

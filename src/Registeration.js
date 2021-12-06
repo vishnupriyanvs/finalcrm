@@ -35,6 +35,7 @@ function MyForm(props) {
                 
                 console.log(response);
                 localStorage.setItem('mytoken',response.data.accessToken)
+                localStorage.setItem('role',response.data.role)
                 window.location='/'
             })
             .catch(error => {
@@ -60,7 +61,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Password:</label>
-                <input  type="password" name="password" value={inputs.password || ""} onChange={handleChange} required />
+                <input  type="password" name="password" value={inputs.password || ""} onChange={handleChange} required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
             </div>
             <div>
                 <label>Role:</label>

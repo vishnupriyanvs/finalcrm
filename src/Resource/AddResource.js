@@ -4,6 +4,9 @@ import axios from 'axios'
 import { ToastContainer, toast } from "react-toastify";
 
 function AddResource() {
+    if( localStorage.getItem('role')!=="admin"){
+        window.location='/';
+    }
     return (<div>
 
         <MyForm />

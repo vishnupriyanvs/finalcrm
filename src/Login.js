@@ -40,6 +40,8 @@ function MyForm(props) {
                 
                 console.log(response.data.accessToken);
                 localStorage.setItem('mytoken',response.data.accessToken)
+                localStorage.setItem('role',response.data.role)
+                console.log(response.data.role)
                 //Navigate('/resourcelist',{ replace: true })
                 window.location='/';
                 //History.push('/resourcelist')
@@ -63,7 +65,7 @@ function MyForm(props) {
             </div>
             <div>
                 <label>Password:</label>
-                <input style={{ marginLeft: 52 }} type="password" name="password" value={inputs.password || ""} onChange={handleChange} required />
+                <input style={{ marginLeft: 52 }} type="password" name="password" value={inputs.password || ""} onChange={handleChange} required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
             </div>
             <div>
                 <label>Role:</label>

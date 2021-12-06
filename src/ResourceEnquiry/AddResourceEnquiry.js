@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useState,useEffect,useParams } from "react";
 import '../Main.css'
 import axios from 'axios'
 import { ToastContainer, toast } from "react-toastify";
 
 function AddResourceEnquiry() {
+    
+    
     return (<div>
-
+        
         <MyForm />
 
     </div>);
 }
 function MyForm() {
-    const[inputs,setInputs] = useState({})
 
+    const[inputs,setInputs] = useState({})
     const notify = () =>
     toast.success("Enquiry Submitted!!!", {
       position: "bottom-center",
@@ -23,6 +25,8 @@ function MyForm() {
       draggable: true,
       progress: undefined
     });
+
+    
 
     function handleChange(event){
         const name = event.target.name ;
@@ -42,7 +46,7 @@ function MyForm() {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            setTimeout(()=>{window.location='/resourcelist'},3000)
+            setTimeout(()=>{window.location='/'},3000)
         })
     }
     return (<div style={{marginTop:'90px'}} id ="main">

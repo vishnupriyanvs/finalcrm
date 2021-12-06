@@ -6,8 +6,8 @@ import './Resource.css'
 
 
 function ResourceSalesPipeLine(){
-    if(!localStorage.getItem('mytoken')){
-        window.location = '/login'
+    if( localStorage.getItem('role')!=="admin" && localStorage.getItem('role')!=="manager" ){
+        window.location='/';
     }
     //initialize the use case to empty
     const [resources,setResources] = useState([])

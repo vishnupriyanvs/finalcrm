@@ -1,5 +1,8 @@
 import Card from "./Card/Card";
+import RCard from "./Card/RCard";
+import axios from "axios";
 function Home(){
+  axios.put(`http://localhost:4500/crm/pagevisit/${1}`)
   return(<>
     
     
@@ -20,6 +23,7 @@ function Home(){
         software like Aldus PageMaker including 
         versions of Lorem Ipsum.</p> */}
         <Card/>
+        <RCard/>
     
   </>
 

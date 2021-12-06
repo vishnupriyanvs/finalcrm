@@ -6,7 +6,7 @@ function Courses(props){
         <h4>{props.details.course_name}</h4>
         
         <div id="buttonsright">
-                <Button style={{width:'100px'}}><Link style={{color:'white',textDecoration:'none'}} to={`/coursedetails/${props.details.id}`}>View Details</Link></Button>
+                <Button style={{width:'100px'}}><Link style={{color:'white',textDecoration:'none'}} to={localStorage.getItem('mytoken') && localStorage.getItem('role') === "admin" ? `/coursedetails/${props.details.id}`:`/couserdetails/${props.details.id}`}>View Details</Link></Button>
         </div>
     </>)
 }

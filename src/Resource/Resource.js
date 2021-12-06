@@ -5,7 +5,7 @@ function Resource(props){
         <h4>{props.details.resource_name}</h4>
         
         <div id="buttonsright">
-                <button style={{width:'100px'}}><Link style={{color:'white',textDecoration:'none'}} to={`/resourcedetails/${props.details.id}`}>View Details</Link></button>
+                <button style={{width:'100px'}}><Link style={{color:'white',textDecoration:'none'}} to={localStorage.getItem('mytoken') && localStorage.getItem('role') === "admin" ? `/resourcedetails/${props.details.id}`:`/reuserdetails/${props.details.id}`}>View Details</Link></button>
         </div>
     </>)
 }

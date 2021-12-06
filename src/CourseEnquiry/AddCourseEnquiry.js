@@ -4,6 +4,9 @@ import axios from 'axios'
 import { ToastContainer, toast } from "react-toastify";
 
 function AddCourseEnquiry() {
+    if(!localStorage.getItem('role')==='user'){
+        window.location('/register');
+    }
    
     return (<div>
 
@@ -44,11 +47,11 @@ function MyForm() {
         .then(response =>{
             console.log('promise fulfilled')
             console.log(response)
-            setTimeout(()=>{window.location='/CourseList'},3000)
+            setTimeout(()=>{window.location='/'},3000)
         })
     }
     return (<div style={{marginTop:'90px'}} id ="main">
-        <h1>Enquire</h1>
+        <h1>Course Enquiry</h1>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Course Name :</label>
