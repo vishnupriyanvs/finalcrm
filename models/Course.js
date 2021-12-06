@@ -16,7 +16,7 @@ const Course=db.define('course',{
         allowNull:false
     },
     duration:{
-        type:Sequelize.INTEGER,
+        type:Sequelize.STRING,
         allowNull:false
     },
     criteria:{
@@ -24,7 +24,7 @@ const Course=db.define('course',{
         allowNull:false
     },
     course_image:{
-        type:Sequelize.STRING,
+        type:Sequelize.TEXT,
         allowNull:false
     }
 });

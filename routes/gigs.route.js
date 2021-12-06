@@ -5,6 +5,12 @@ const resourceController=require('../controller/resource.controller');
 const resourceEnquiryController=require('../controller/resourceenquiry.controller');
 const courseEnquiryController=require('../controller/courseenquiry.controller');
 
+const pageVisitController=require('../controller/PageVisit.controller');
+
+
+
+
+
 
 router.post('/resource',resourceController.addGig);
 router.get('/resource',resourceController.findGigs);
@@ -30,4 +36,9 @@ router.get('/ceenquiry/:id',courseEnquiryController.findGigById);
 router.put('/ceenquiry/:id',courseEnquiryController.updateGig);
 router.delete('/ceenquiry/:id',courseEnquiryController.deleteById);
 
+
+router.get('/pagevisit',pageVisitController.findGigs);
+router.get('/pagevisit/:id',pageVisitController.findGigById);
+router.post('/pagevisit',pageVisitController.addPageVisit);
+router.put('/pagevisit/:id',pageVisitController.updateGig);
 module.exports=router;

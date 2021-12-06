@@ -1,8 +1,14 @@
-const bodyParser=require('body-parser');
+
 const express = require('express');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+
+const dotenv = require('dotenv');
+
+const envConfig = dotenv.config({ path: __dirname + process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}`.trim() : ".env.sqlite"});
+
+for(const key in envConfig){
+    process.env[key]=envConfig[key];
+}
 
 const db = require('./config/database');
 db.authenticate().then(() =>{

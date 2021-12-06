@@ -3,3 +3,7 @@ node_modules
 
 #db
 crmDb.sqlite
+
+#envfiles
+.env.mysql
+.env.sqlite

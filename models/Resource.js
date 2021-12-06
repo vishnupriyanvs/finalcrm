@@ -16,11 +16,11 @@ const Resource=db.define('resource',{
         allowNull:false
     },
     duration:{
-        type:Sequelize.INTEGER,
+        type:Sequelize.STRING,
         allowNull:false
     },
     picture:{
-        type:Sequelize.STRING,
+        type:Sequelize.TEXT,
         allowNull:false
     },
     description:{

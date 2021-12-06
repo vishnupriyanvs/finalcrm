@@ -34,7 +34,7 @@ const createUsersTable = () => {
     return database.run(sqlQuery);
 }
 
-//createUsersTable();
+createUsersTable();
 
 const findUserByEmail = (email, cb) => {
     return database.get(`SELECT * FROM users WHERE email = ?`, [email], (err, row) => {
@@ -63,7 +63,7 @@ router.post('/register', (req, res) => {
                 expiresIn: expiresIn
             });
             res.status(200).send({
-                "user": user, "accessToken": accessToken, "expires_in": expiresIn
+                "user": user, "accessToken": accessToken,"role":role, "expires_in": expiresIn
             });
         });
     });
@@ -74,7 +74,7 @@ router.post('/login', (req, res) => {
     const password = req.body.password;
     findUserByEmail(email, (err, user) => {
         if (err) return res.status(500).send('Server error!');
-        if(role !== "manager" && role !== "admin") return res.status(404).send('You are no authorized');
+        if(role !== "manager" && role !== "admin" && role !== "user") return res.status(404).send('You are no authorized');
         if (!user) return res.status(404).send('User not found!');
         const result = bcrypt.compareSync(password, user.password);
         if (!result) return res.status(401).send('Password not valid!');
@@ -85,6 +85,7 @@ router.post('/login', (req, res) => {
         res.status(200).send({
             "user": user,
             "accessToken": accessToken,
+            "role": role,
             "expires_in": expiresIn
         });
     });
